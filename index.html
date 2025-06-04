@@ -80,9 +80,24 @@
 </style>
   </main>
 
-  <footer>
-    <p>© 2025 Wonosobo Tourism | <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a> | <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a></p>
-  </footer>
+  <footer class="bg-gray-900 text-gray-200 py-6 mt-10">
+  <div class="container mx-auto flex flex-col md:flex-row justify-between items-center px-4">
+    <p class="text-sm">&copy; 2025 Wonosobo Tourism. All rights reserved.</p>
+    <div class="flex space-x-4 mt-4 md:mt-0">
+      <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="hover:text-white transition">
+        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+          <path d="M12 0C5.37...Z" /> <!-- Potong di sini, bisa pakai ikon lengkap -->
+        </svg>
+      </a>
+      <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="hover:text-white transition">
+        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+          <path d="M23 3a10.9...Z" />
+        </svg>
+      </a>
+    </div>
+  </div>
+</footer>
+
 
   <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
   <script src="script.js"></script>
