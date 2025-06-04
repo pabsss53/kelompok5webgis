@@ -1,0 +1,21 @@
+/* Reset */
+:root {
+  --primary: #045D56;
+  --primary-light: #0E8174;
+  --secondary: #FFB74D;
+  --secondary-light: #FFE066;
+  --text-light: #e0f2f1;
+  --text-dark: #333;
+  --bg-light: #ffffff;
+  --bg-dark: #121212;
+  --card-shadow: 0 12px 25px rgba(0,0,0,0.12);
+  --transition: all 0.3s ease;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Add the rest of the styles as needed, as provided in your original code. */
