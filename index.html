@@ -6,13 +6,11 @@
   <meta name="description" content="Temukan tempat wisata terbaik di Wonosobo - Gunung Prau, Dieng Plateau, Curug Surodipo dan banyak lagi. Informasi lengkap dan peta interaktif.">
   <title>Tempat Wisata di Wonosobo | Destinasi Alam & Budaya</title>
 
-  <!-- Link to external CSS file -->
-  <link rel="stylesheet" href="style.css">
-
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
@@ -32,14 +30,14 @@
     </div>
   </nav>
 
-  <main>
+ <main>
     <section id="deskripsi" class="description" tabindex="0" aria-label="Deskripsi Wonosobo">
       <h2 class="section-heading">Selamat Datang di Wonosobo</h2>
       Wonosobo adalah kabupaten di Jawa Tengah yang terkenal dengan keindahan alamnya yang memukau. Dikelilingi oleh pegunungan dan dataran tinggi, daerah ini menawarkan udara sejuk dan panorama yang spektakuler. Dari puncak Gunung Prau yang menawan hingga pesona Dieng yang mistis, Wonosobo menjadi pilihan utama bagi wisatawan yang mencari ketenangan dan petualangan. Selain keindahan alam, Wonosobo juga kaya akan warisan budaya dan kuliner khas seperti mie ongklok, carica, dan kopi khas Wonosobo.
     </section>
 
     <section id="wisata" class="cards-container" aria-label="Daftar Tempat Wisata">
-      <!-- Example of tourist card -->
+      <!-- Contoh card wisata -->
       <article class="card" tabindex="0" role="region" aria-labelledby="card1-title">
         <img src="https://source.unsplash.com/400x280/?mountain" alt="Pemandangan Gunung Prau" loading="lazy" />
         <div class="card-body">
@@ -48,7 +46,22 @@
           <button aria-haspopup="dialog" aria-controls="modal1" class="btn-detail">Lihat Detail</button>
         </div>
       </article>
-      <!-- Repeat for other cards -->
+      <article class="card" tabindex="0" role="region" aria-labelledby="card2-title">
+        <img src="https://source.unsplash.com/400x280/?temple" alt="Candi Dieng" loading="lazy" />
+        <div class="card-body">
+          <h3 id="card2-title">Dieng Plateau</h3>
+          <p>Dataran tinggi Dieng menawarkan kompleks candi kuno dan fenomena alam kawah belerang.</p>
+          <button aria-haspopup="dialog" aria-controls="modal2" class="btn-detail">Lihat Detail</button>
+        </div>
+      </article>
+      <article class="card" tabindex="0" role="region" aria-labelledby="card3-title">
+        <img src="https://source.unsplash.com/400x280/?waterfall" alt="Air Terjun Curug Surodipo" loading="lazy" />
+        <div class="card-body">
+          <h3 id="card3-title">Curug Surodipo</h3>
+          <p>Air terjun eksotis yang menyegarkan dengan akses trekking yang menantang.</p>
+          <button aria-haspopup="dialog" aria-controls="modal3" class="btn-detail">Lihat Detail</button>
+        </div>
+      </article>
     </section>
 
     <section id="peta" aria-label="Peta Interaktif Wonosobo">
@@ -58,7 +71,7 @@
     </section>
   </main>
 
-  <!-- Modal for tourist details -->
+  <!-- Modal detail wisata -->
   <div id="modal1" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal1-title" tabindex="-1">
     <div class="modal-content">
       <button class="modal-close" aria-label="Tutup">×</button>
@@ -66,12 +79,26 @@
       <p>Gunung Prau merupakan gunung favorit bagi para pendaki di Jawa Tengah dengan panorama matahari terbit yang memukau. Jalur pendakian terawat dan banyak titik camping yang nyaman.</p>
     </div>
   </div>
+  <div id="modal2" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal2-title" tabindex="-1">
+    <div class="modal-content">
+      <button class="modal-close" aria-label="Tutup">×</button>
+      <h2 id="modal2-title">Dieng Plateau</h2>
+      <p>Dieng Plateau terkenal dengan kawah belerang aktif dan sejumlah candi Hindu kuno yang berusia ratusan tahun, menjadikannya lokasi wisata sejarah dan alam yang unik.</p>
+    </div>
+  </div>
+  <div id="modal3" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal3-title" tabindex="-1">
+    <div class="modal-content">
+      <button class="modal-close" aria-label="Tutup">×</button>
+      <h2 id="modal3-title">Curug Surodipo</h2>
+      <p>Curug Surodipo menawarkan pemandangan air terjun yang indah dan sejuk. Lokasinya cocok untuk pecinta alam dan petualangan dengan jalur trekking yang menantang.</p>
+    </div>
+  </div>
 
   <footer>
     <p>© 2025 Wonosobo Tourism | <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a> | <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a></p>
   </footer>
 
-  <!-- Link to external JS file -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
