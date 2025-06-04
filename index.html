@@ -30,10 +30,10 @@
     </div>
   </nav>
 
- <main>
+  <main>
     <section id="deskripsi" class="description" tabindex="0" aria-label="Deskripsi Wonosobo">
       <h2 class="section-heading">Selamat Datang di Wonosobo</h2>
-      Wonosobo adalah kabupaten di Jawa Tengah yang terkenal dengan keindahan alamnya yang memukau. Dikelilingi oleh pegunungan dan dataran tinggi, daerah ini menawarkan udara sejuk dan panorama yang spektakuler. Dari puncak Gunung Prau yang menawan hingga pesona Dieng yang mistis, Wonosobo menjadi pilihan utama bagi wisatawan yang mencari ketenangan dan petualangan. Selain keindahan alam, Wonosobo juga kaya akan warisan budaya dan kuliner khas seperti mie ongklok, carica, dan kopi khas Wonosobo.
+      <p>Wonosobo adalah kabupaten di Jawa Tengah yang terkenal dengan keindahan alamnya yang memukau...</p>
     </section>
 
     <section id="wisata" class="cards-container" aria-label="Daftar Tempat Wisata">
@@ -42,26 +42,11 @@
         <img src="1.png" alt="Pemandangan Gunung Prau" loading="lazy" />
         <div class="card-body">
           <h3 id="card1-title">Gunung Prau</h3>
-          <p>Gunung Prau adalah destinasi hiking populer dengan pemandangan matahari terbit yang spektakuler.</p>
+          <p>Gunung Prau adalah destinasi hiking populer...</p>
           <button aria-haspopup="dialog" aria-controls="modal1" class="btn-detail">Lihat Detail</button>
         </div>
       </article>
-      <article class="card" tabindex="0" role="region" aria-labelledby="card2-title">
-        <img src="2.png" alt="Candi Dieng" loading="lazy" />
-        <div class="card-body">
-          <h3 id="card2-title">Dieng Plateau</h3>
-          <p>Dataran tinggi Dieng menawarkan kompleks candi kuno dan fenomena alam kawah belerang.</p>
-          <button aria-haspopup="dialog" aria-controls="modal2" class="btn-detail">Lihat Detail</button>
-        </div>
-      </article>
-      <article class="card" tabindex="0" role="region" aria-labelledby="card3-title">
-        <img src="3.png" alt="Air Terjun Curug Surodipo" loading="lazy" />
-        <div class="card-body">
-          <h3 id="card3-title">Curug Surodipo</h3>
-          <p>Air terjun eksotis yang menyegarkan dengan akses trekking yang menantang.</p>
-          <button aria-haspopup="dialog" aria-controls="modal3" class="btn-detail">Lihat Detail</button>
-        </div>
-      </article>
+      <!-- Card lainnya -->
     </section>
 
     <section id="peta" aria-label="Peta Interaktif Wonosobo">
@@ -69,85 +54,82 @@
       <div id="map" tabindex="0" aria-describedby="mapDesc"></div>
       <p id="mapDesc" class="visually-hidden"></p>
     </section>
-      
-</script>
-<style>
-    /* Mengatur ukuran map */
-    #map {
+
+    <style>
+      #map {
         height: 500px;
         width: 100%;
-    }
-</style>
+      }
+    </style>
+
+    <!-- SECTION 1 -->
+    <section class="bg-teal-800 text-white py-12">
+      <div class="container mx-auto grid md:grid-cols-2 gap-8 px-6">
+        <!-- Penjelasan -->
+        <div>
+          <h2 class="text-2xl font-bold mb-4">Penjelasan tentang Wonosobo</h2>
+          <ul class="space-y-2">
+            <li class="bg-teal-700 p-4 rounded">Informasi bebas 1</li>
+            <li class="bg-teal-700 p-4 rounded">Informasi bebas 2</li>
+            <li class="bg-teal-700 p-4 rounded">Informasi bebas 3</li>
+            <li class="bg-teal-700 p-4 rounded">Informasi bebas 4</li>
+            <li class="bg-teal-700 p-4 rounded">Informasi bebas 5</li>
+          </ul>
+        </div>
+
+        <!-- Foto Pemandangan -->
+        <div class="bg-gray-300 rounded h-64 flex items-center justify-center text-teal-800 font-bold">
+          Foto Pemandangan Bebas di Wonosobo
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2 -->
+    <section class="bg-gray-200 text-teal-800 py-16">
+      <div class="container mx-auto px-6">
+        <div class="bg-gray-300 h-72 flex items-center justify-center rounded text-xl font-semibold">
+          Foto Pemandangan Bebas di Wonosobo (Lebar)
+        </div>
+      </div>
+    </section>
   </main>
 
- <<section class="bg-teal-800 text-white py-12">
-  <div class="container mx-auto grid md:grid-cols-2 gap-8 px-6">
-    <!-- Penjelasan -->
-    <div>
-      <h2 class="text-2xl font-bold mb-4">Penjelasan tentang Wonosobo</h2>
-      <ul class="space-y-2">
-        <li class="bg-teal-700 p-4 rounded">Informasi bebas 1</li>
-        <li class="bg-teal-700 p-4 rounded">Informasi bebas 2</li>
-        <li class="bg-teal-700 p-4 rounded">Informasi bebas 3</li>
-        <li class="bg-teal-700 p-4 rounded">Informasi bebas 4</li>
-        <li class="bg-teal-700 p-4 rounded">Informasi bebas 5</li>
-      </ul>
-    </div>
-
-    <!-- Foto Pemandangan -->
-    <div class="bg-gray-300 rounded h-64 flex items-center justify-center text-teal-800 font-bold">
-      Foto Pemandangan Bebas di Wonosobo
-    </div>
-  </div>
-</section>
-
-<!-- SECTION 2 -->
-<section class="bg-gray-200 text-teal-800 py-16">
-  <div class="container mx-auto px-6">
-    <div class="bg-gray-300 h-72 flex items-center justify-center rounded text-xl font-semibold">
-      Foto Pemandangan Bebas di Wonosobo (Lebar)
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer class="bg-teal-800 text-white py-10">
-  <div class="container mx-auto px-6">
-    <!-- Searchbar -->
-    <div class="flex justify-center mb-8">
-      <input 
-        type="text" 
-        placeholder="SEARCHBAR INFORMASI WONOSOBO" 
-        class="w-full md:w-1/2 px-4 py-3 rounded-full text-gray-800 placeholder-gray-500"
-      />
-    </div>
-
-    <!-- Grid bawah -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center md:text-left">
-      <!-- Info Kontak -->
-      <div>
-        <h3 class="text-lg font-semibold mb-2">INFO CONTACT</h3>
-        <p>Email: info@wonosobo.id</p>
-        <p>Telp: (0286) 123456</p>
-        <p>Alamat: Jl. Raya Wonosobo, Jawa Tengah</p>
+  <!-- FOOTER -->
+  <footer class="bg-teal-800 text-white py-10">
+    <div class="container mx-auto px-6">
+      <!-- Searchbar -->
+      <div class="flex justify-center mb-8">
+        <input 
+          type="text" 
+          placeholder="SEARCHBAR INFORMASI WONOSOBO" 
+          class="w-full md:w-1/2 px-4 py-3 rounded-full text-gray-800 placeholder-gray-500"
+        />
       </div>
 
-      <!-- Kosong / bisa diisi konten -->
-      <div></div>
+      <!-- Grid bawah -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center md:text-left">
+        <!-- Info Kontak -->
+        <div>
+          <h3 class="text-lg font-semibold mb-2">INFO CONTACT</h3>
+          <p>Email: info@wonosobo.id</p>
+          <p>Telp: (0286) 123456</p>
+          <p>Alamat: Jl. Raya Wonosobo, Jawa Tengah</p>
+        </div>
 
-      <!-- Sosial Media -->
-      <div>
-        <h3 class="text-lg font-semibold mb-2 text-right">SOCIAL MEDIA</h3>
-        <div class="flex justify-center md:justify-end space-x-4">
-          <a href="#" class="bg-white text-teal-800 px-4 py-2 rounded font-semibold">Instagram</a>
-          <a href="#" class="bg-white text-teal-800 px-4 py-2 rounded font-semibold">Twitter</a>
+        <!-- Kosong / bisa diisi konten -->
+        <div></div>
+
+        <!-- Sosial Media -->
+        <div>
+          <h3 class="text-lg font-semibold mb-2 text-right">SOCIAL MEDIA</h3>
+          <div class="flex justify-center md:justify-end space-x-4">
+            <a href="#" class="bg-white text-teal-800 px-4 py-2 rounded font-semibold">Instagram</a>
+            <a href="#" class="bg-white text-teal-800 px-4 py-2 rounded font-semibold">Twitter</a>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</footer>
-
-
+  </footer>
 
   <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
   <script src="script.js"></script>
