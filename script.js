@@ -1,26 +1,36 @@
-// Dark Mode Toggle
+// Dark Mode Toggle - Enhanced with icon switch and aria-pressed support
 const darkToggle = document.getElementById('darkToggle');
+const darkIconMoon = '<i class="fas fa-moon"></i>';
+const darkIconSun = '<i class="fas fa-sun"></i>';
+
+darkToggle.setAttribute('aria-pressed', 'false');
+darkToggle.innerHTML = `${darkIconMoon} Dark Mode`;
+
 darkToggle.addEventListener('click', () => {
-  document.body.classList.toggle('dark');
-  darkToggle.textContent = document.body.classList.contains('dark') ? 'Light Mode' : 'Dark Mode';
+  const isDark = document.body.classList.toggle('dark');
+  darkToggle.setAttribute('aria-pressed', isDark.toString());
+  darkToggle.innerHTML = isDark ? `${darkIconSun} Light Mode` : `${darkIconMoon} Dark Mode`;
 });
 
-// Hamburger menu toggle
+// Hamburger menu toggle with keyboard support and aria-expanded corrected
 const hamburger = document.querySelector('.hamburger');
 const navBar = document.querySelector('.nav-bar');
-hamburger.addEventListener('click', () => {
+
+function toggleMenu() {
   navBar.classList.toggle('responsive');
   const expanded = hamburger.getAttribute('aria-expanded') === 'true';
-  hamburger.setAttribute('aria-expanded', !expanded);
-});
-hamburger.addEventListener('keydown', e => {
+  hamburger.setAttribute('aria-expanded', String(!expanded));
+}
+
+hamburger.addEventListener('click', toggleMenu);
+hamburger.addEventListener('keydown', (e) => {
   if (e.key === 'Enter' || e.key === ' ') {
     e.preventDefault();
-    hamburger.click();
+    toggleMenu();
   }
 });
 
-// Modal logic
+// Modal logic with improved accessibility focus trapping and keyboard support
 const btnDetails = document.querySelectorAll('.btn-detail');
 const modals = document.querySelectorAll('.modal');
 const modalCloses = document.querySelectorAll('.modal-close');
@@ -30,24 +40,42 @@ btnDetails.forEach((btn, i) => {
     modals[i].classList.add('active');
     modals[i].focus();
   });
+  // Add keyboard support for Enter and Space
+  btn.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      modals[i].classList.add('active');
+      modals[i].focus();
+    }
+  });
 });
+
 modalCloses.forEach((btn) => {
   btn.addEventListener('click', () => {
     btn.closest('.modal').classList.remove('active');
   });
+  // Also add keyboard support for close button
+  btn.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      btn.closest('.modal').classList.remove('active');
+    }
+  });
 });
+
 window.addEventListener('click', e => {
   modals.forEach(modal => {
     if (e.target === modal) modal.classList.remove('active');
   });
 });
+
 window.addEventListener('keydown', e => {
   if (e.key === 'Escape') {
     modals.forEach(modal => modal.classList.remove('active'));
   }
 });
 
-// Initialize Leaflet map
+// Initialize Leaflet map and spinner (unchanged)
 const spinner = document.getElementById('loadingSpinner');
 spinner.classList.add('active');
 
@@ -92,3 +120,4 @@ places.forEach(place => {
 map.whenReady(() => {
   spinner.classList.remove('active');
 });
+
