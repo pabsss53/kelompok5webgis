@@ -1,3 +1,4 @@
+
 /* Reset */
 :root {
   --primary: #045D56;
@@ -19,3 +20,8 @@
 }
 
 /* Add the rest of the styles as needed, as provided in your original code. */
+
+#map {
+  height: 400px;  /* You can adjust the height as needed */
+  width: 100%;
+}
