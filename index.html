@@ -69,32 +69,7 @@
       <div id="map" tabindex="0" aria-describedby="mapDesc"></div>
       <p id="mapDesc" class="visually-hidden">Peta interaktif yang menampilkan lokasi tempat wisata utama di Wonosobo.</p>
     </section>
-       var map = L.map('map').setView([-7.2007, 109.9372], 12); // Koordinat Wonosobo
-    // Menambah Tile Layer
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 19,
-        attribution: '© OpenStreetMap'
-    }).addTo(map);
-    // Data Tempat Wisata dengan GeoJSON
-    var wisata = [
-        {
-            "name": "Dieng Plateau",
-            "coordinates": [-7.2016, 109.6516]
-        },
-        {
-            "name": "Telaga Warna",
-            "coordinates": [-7.2040, 109.6510]
-        },
-        {
-            "name": "Oro Oro Ombo",
-            "coordinates": [-7.2071, 109.9860]
-        }
-    ];
-    // Menambahkan Marker dan Pop-up
-    wisata.forEach(function(item) {
-        L.marker(item.coordinates).addTo(map)
-            .bindPopup(item.name);
-    });
+      
 </script>
 <style>
     /* Mengatur ukuran map */
