@@ -1,4 +1,3 @@
-
 /* Reset */
 :root {
   --primary: #045D56;
@@ -19,9 +18,369 @@
   padding: 0;
 }
 
-/* Add the rest of the styles as needed, as provided in your original code. */
+body {
+  margin: 0;
+  font-family: 'Poppins', Arial, sans-serif;
+  background: linear-gradient(135deg, #e6f2f2, #ffffff);
+  color: var(--text-dark);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  transition: background-color 0.4s ease, color 0.4s ease;
+  line-height: 1.6;
+}
 
-#map {
-  height: 400px;  /* You can adjust the height as needed */
+/* Dark Mode */
+body.dark {
+  background: var(--bg-dark);
+  color: #eee;
+  --text-dark: #eee;
+  --primary: #1b1b1b;
+  --primary-light: #333;
+}
+
+body.dark header,
+body.dark footer {
+  background-color: var(--primary);
+  color: var(--text-light);
+  box-shadow: none;
+}
+
+body.dark .nav-bar {
+  background-color: var(--primary-light);
+  box-shadow: none;
+}
+
+body.dark .nav-bar a {
+  color: #ddd;
+}
+
+body.dark .nav-bar a:hover::after {
+  background-color: var(--secondary);
+}
+
+body.dark .description {
+  background-color: #222;
+  color: #ddd;
+  box-shadow: 0 10px 25px rgba(255 255 255 / 0.1);
+}
+
+body.dark #map {
+  box-shadow: 0 20px 40px rgba(255 255 255 / 0.12);
+}
+
+body.dark .leaflet-popup-content-wrapper {
+  background: #222 !important;
+  color: #ddd !important;
+  box-shadow: 0 8px 20px rgba(255 255 255 / 0.15) !important;
+}
+
+body.dark .popup-text h3 {
+  color: var(--secondary);
+}
+
+body.dark footer a {
+  color: var(--secondary);
+}
+
+body.dark .modal-content {
+  background-color: #222;
+  color: #eee;
+  box-shadow: 0 8px 30px rgba(255 255, 255, 0.15);
+}
+
+body.dark .card {
+  background-color: #1e1e1e;
+  box-shadow: 0 12px 25px rgba(255, 255, 255, 0.05);
+}
+
+body.dark .card-body p {
+  color: #ccc;
+}
+
+/* Header */
+header {
+  background-color: var(--primary);
+  color: var(--text-light);
+  padding: 2.5rem 1rem;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: var(--transition);
+}
+
+header h1 {
+  margin: 0 0 0.5rem 0;
+  font-weight: 600;
+  font-size: 2.25rem;
+  letter-spacing: 1px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+header p {
+  margin: 0;
+  font-weight: 400;
+  font-size: 1.1rem;
+  opacity: 0.85;
+  font-style: italic;
+}
+
+/* Dark Mode toggle button */
+#darkToggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: var(--secondary);
+  border: none;
+  border-radius: 25px;
+  padding: 8px 14px;
+  font-weight: 600;
+  cursor: pointer;
+  color: #333;
+  transition: var(--transition);
+  box-shadow: 0 3px 7px rgba(0,0,0,0.2);
+  user-select: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+#darkToggle:hover {
+  background: var(--secondary-light);
+  color: #fff;
+}
+
+/* Navigation Bar */
+.nav-bar {
+  background-color: var(--primary-light);
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 0.85rem 1rem;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+  transition: var(--transition);
+  position: sticky;
+  top: 80px;
+  z-index: 999;
+}
+
+.nav-bar a {
+  color: var(--text-light);
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 3px;
+  transition: var(--transition);
+}
+
+.nav-bar a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 0;
+  background-color: var(--secondary-light);
+  transition: var(--transition);
+  border-radius: 3px;
+}
+
+.nav-bar a:hover, 
+.nav-bar a:focus {
+  color: #fffde7;
+}
+
+.nav-bar a:hover::after, 
+.nav-bar a:focus::after {
   width: 100%;
 }
+
+/* Responsive Nav Hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  width: 26px;
+  height: 20px;
+  justify-content: space-between;
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  z-index: 1001;
+}
+
+.hamburger div {
+  width: 100%;
+  height: 3.5px;
+  background-color: var(--text-light);
+  border-radius: 3px;
+  transition: var(--transition);
+}
+
+.nav-bar.responsive {
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+  padding: 1rem;
+  position: fixed;
+  top: 80px;
+  right: 0;
+  background-color: var(--primary-light);
+  width: 100%;
+  max-width: 250px;
+  height: calc(100vh - 80px);
+  overflow-y: auto;
+  box-shadow: -3px 0 15px rgba(0,0,0,0.2);
+  transition: transform 0.4s ease;
+  transform: translateX(0);
+}
+
+.nav-bar.responsive a {
+  font-size: 1.1rem;
+}
+
+/* Active state for hamburger */
+.hamburger.active div:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active div:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active div:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Main content */
+main {
+  flex: 1;
+  padding: 1rem 1rem 3rem 1rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Description */
+.description {
+  background-color: var(--bg-light);
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 1.75rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  line-height: 1.65;
+  font-size: 1.125rem;
+  color: #444;
+  text-align: justify;
+  transition: var(--transition);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s forwards;
+  animation-delay: 0.3s;
+}
+
+/* Fade In Animation */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Section headings */
+.section-heading {
+  text-align: center;
+  margin: 2rem 0 1.5rem;
+  color: var(--primary);
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.section-heading::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background-color: var(--secondary);
+  border-radius: 3px;
+}
+
+/* Cards container */
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 2rem auto 3rem auto;
+}
+
+/* Individual card */
+.card {
+  background: var(--bg-light);
+  border-radius: 16px;
+  box-shadow: var(--card-shadow);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 35px rgba(0,0,0,0.18);
+}
+
+.card-img-container {
+  position: relative;
+  overflow: hidden;
+  height: 180px;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+  border-bottom: 4px solid var(--primary-light);
+}
+
+.card:hover img {
+  transform: scale(1.05);
+}
+
+.card-rating {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.9rem;
+}
+
+.card-body {
+  padding: 1rem 1.25rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-body h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.25rem;
+  color: var(--primary-light);
+  font-weight: 600;
+  flex-grow: 0;}
