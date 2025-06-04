@@ -13,6 +13,12 @@ hamburger.addEventListener('click', () => {
   const expanded = hamburger.getAttribute('aria-expanded') === 'true';
   hamburger.setAttribute('aria-expanded', !expanded);
 });
+hamburger.addEventListener('keydown', e => {
+  if (e.key === 'Enter' || e.key === ' ') {
+    e.preventDefault();
+    hamburger.click();
+  }
+});
 
 // Modal logic
 const btnDetails = document.querySelectorAll('.btn-detail');
@@ -25,19 +31,16 @@ btnDetails.forEach((btn, i) => {
     modals[i].focus();
   });
 });
-
 modalCloses.forEach((btn) => {
   btn.addEventListener('click', () => {
     btn.closest('.modal').classList.remove('active');
   });
 });
-
 window.addEventListener('click', e => {
   modals.forEach(modal => {
     if (e.target === modal) modal.classList.remove('active');
   });
 });
-
 window.addEventListener('keydown', e => {
   if (e.key === 'Escape') {
     modals.forEach(modal => modal.classList.remove('active'));
