@@ -121,30 +121,4 @@ map.whenReady(() => {
   spinner.classList.remove('active');
 });
 
-<script>
-  // Tangani form langganan
-  document.addEventListener("DOMContentLoaded", function () {
-    const form = document.querySelector(".form-group");
-    const emailInput = document.querySelector(".email-input");
-
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-      const email = emailInput.value.trim();
-
-      if (!validateEmail(email)) {
-        alert("Masukkan email yang valid!");
-        return;
-      }
-
-      // Simulasi pengiriman data
-      alert("Terima kasih telah berlangganan, " + email + "!");
-      emailInput.value = "";
-    });
-
-    function validateEmail(email) {
-      const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      return regex.test(email);
-    }
-  });
-</script>
 
