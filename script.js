@@ -121,3 +121,27 @@ map.whenReady(() => {
   spinner.classList.remove('active');
 });
 
+script>
+  // Back to top button or other site-wide controls can be separate in your site.
+  // Animated button feedback for search button (you may adjust or integrate this)
+  const searchButton = document.getElementById('footer-search-button');
+  if (searchButton) {
+    searchButton.addEventListener('mousedown', () => {
+      searchButton.style.transform = 'scale(0.8) rotate(-15deg)';
+    });
+    searchButton.addEventListener('mouseup', () => {
+      searchButton.style.transform = '';
+    });
+    searchButton.addEventListener('mouseleave', () => {
+      searchButton.style.transform = '';
+    });
+    searchButton.addEventListener('click', () => {
+      const searchInput = document.getElementById('footer-search-input');
+      const query = searchInput.value.trim();
+      if (query) {
+        alert(`You searched for: "${query}"`);
+        searchInput.value = '';
+      }
+    });
+  }
+</script>
