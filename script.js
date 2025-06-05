@@ -95,12 +95,12 @@ const icon = L.icon({
 // Locations
 const places = [
   {
-    coords: [-7.307, 109.912],
+    coords: [-7.168, 109.922],
     name: "Gunung Prau",
     desc: "Gunung Prau adalah destinasi hiking populer dengan pemandangan matahari terbit yang spektakuler."
   },
   {
-    coords: [-7.168, 109.922],
+    coords: [-7.307, 109.912],
     name: "Dieng Plateau",
     desc: "Dataran tinggi Dieng menawarkan kompleks candi kuno dan fenomena alam kawah belerang."
   },
