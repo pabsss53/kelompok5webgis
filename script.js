@@ -31,7 +31,6 @@ hamburger.addEventListener('keydown', (e) => {
 });
 
 // Modal logic with improved accessibility focus trapping and keyboard support
-const btnDetails = document.querySelectorAll('.btn-detail');
 const modals = document.querySelectorAll('.modal');
 const modalCloses = document.querySelectorAll('.modal-close');
 
