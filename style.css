@@ -387,3 +387,85 @@ main {
   z-index: 1000; /* pastikan di atas layer peta tapi tidak menabrak UI lain */
 }
 
+
+.footer {
+  background: linear-gradient(to right, #14532d, #65a30d); /* Hijau tua ke hijau muda */
+  color: white;
+  padding: 40px 20px;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: space-between;
+}
+
+.subscription {
+  flex: 2;
+}
+
+.footer-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.underline-green {
+  border-bottom: 3px solid #bbf7d0;
+  padding-bottom: 4px;
+  display: inline-block;
+}
+
+.form-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.email-input {
+  padding: 15px 20px;
+  border-radius: 30px;
+  border: none;
+  flex: 1;
+  min-width: 220px;
+  font-size: 16px;
+  color: #333;
+}
+
+.subscribe-btn {
+  background-color: #d9f99d;
+  color: #14532d;
+  font-weight: bold;
+  padding: 15px 30px;
+  border-radius: 30px;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.footer-links {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  font-weight: bold;
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 14px;
+}
