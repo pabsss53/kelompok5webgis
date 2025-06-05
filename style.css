@@ -294,7 +294,7 @@ main {
 .section-heading {
   text-align: center;
   margin: 2rem 0 1.5rem;
-  color: var(--primary);
+  color: White(--primary);
   position: relative;
   padding-bottom: 10px;
 }
