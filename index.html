@@ -12,6 +12,28 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="stylesheet" href="style.css" />
 </head>
+
+<script>
+  // Inisialisasi peta
+  const map = L.map('map').setView([-7.3625, 109.9000], 11); // Koordinat Wonosobo
+
+  // Tambahkan layer tile dari OpenStreetMap
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors'
+  }).addTo(map);
+
+  // Contoh marker
+  L.marker([-7.2465, 109.9183]).addTo(map)
+    .bindPopup('<b>Gunung Prau</b><br>Destinasi hiking populer.')
+    .openPopup();
+
+  L.marker([-7.2033, 109.9217]).addTo(map)
+    .bindPopup('<b>Dieng Plateau</b><br>Candi kuno dan kawah belerang.');
+
+  L.marker([-7.3157, 110.0054]).addTo(map)
+    .bindPopup('<b>Curug Surodipo</b><br>Air terjun eksotis.');
+</script>
+  
 <body>
   <header>
     <h1>Tempat Wisata di Wonosobo</h1>
